@@ -26,11 +26,16 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Copy the application code
+# Copy all project files
+#COPY . .
+# Copy specific project folders
 COPY ./app ./app
+COPY ./output_data ./output_data
+COPY ./input_data ./input_data
 
 # Expose the port used by Streamlit
 EXPOSE 8501
 
 # Command to run the app
 CMD ["streamlit", "run", "app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+

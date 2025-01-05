@@ -116,7 +116,7 @@ def create_dual_map(gdf):
 
 # Streamlit app layout
 #st.set_page_config(layout="wide")  # Set wide layout for larger maps
-st.title("Geospatial 2024 Robberty Crime Visualization")
+st.title("Geospatial 2024 Robbery Crime Visualization")
 
 # Subtitles for maps
 col1, col2, col3 = st.columns(3)
