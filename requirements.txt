@@ -10,4 +10,5 @@ libpysal
 shapely==1.7.1
 fiona==1.9.2
 gdal
-setuptools
+setuptools>=58.0.0
+wheel
