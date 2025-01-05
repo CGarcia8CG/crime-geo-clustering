@@ -76,7 +76,7 @@ def create_dual_map(gdf):
     agg_colors = get_cluster_colors(gdf, 'agg_cluster')
 
     # Initialize dual map
-    dual_map = DualMap(location=[gdf.geometry.centroid.y.mean(), gdf.geometry.centroid.x.mean()], zoom_start=10, control_scale=True)
+    dual_map = DualMap(location=[gdf.geometry.centroid.y.mean(), gdf.geometry.centroid.x.mean()], zoom_start=11, control_scale=True)
 
     # Add polygons to both maps
     for _, row in gdf.iterrows():
@@ -116,7 +116,7 @@ def create_dual_map(gdf):
 
 # Streamlit app layout
 #st.set_page_config(layout="wide")  # Set wide layout for larger maps
-st.title("Mexico City Robbery Crime Visualization")
+st.title("Geospatial Robbery Crime Visualization")
 
 # Subtitles for maps
 col1, col2, col3 = st.columns(3)
@@ -127,4 +127,4 @@ with col3:
 
 # Create dual map
 dual_map = create_dual_map(polygons_gdf)
-folium_static(dual_map, width=1100, height=950)
+folium_static(dual_map, width=1000, height=950)
