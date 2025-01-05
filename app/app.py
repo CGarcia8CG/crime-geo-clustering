@@ -18,12 +18,12 @@ if polygons_gdf.crs is None:
 
 # Load models
 #with open('../models/kmeans_model.pkl', 'rb') as f:
-with open(os.path.join('models','kmeans_model.pkl'), 'rb') as f:
-    kmeans_model = pickle.load(f)
+#with open(os.path.join('models','kmeans_model.pkl'), 'rb') as f:
+#    kmeans_model = pickle.load(f)
 
 #with open('../models/agg_clustering_model.pkl', 'rb') as f:
-with open(os.path.join('models','agg_clustering_model.pkl'), 'rb') as f:
-    agg_model = pickle.load(f)
+#with open(os.path.join('models','agg_clustering_model.pkl'), 'rb') as f:
+#    agg_model = pickle.load(f)
 
 # --- SIDEBAR INTERACTIVO ---
 with st.sidebar:
@@ -119,12 +119,12 @@ def create_dual_map(gdf):
 st.title("Geospatial 2024 Robberty Crime Visualization")
 
 # Subtitles for maps
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
     st.subheader("K-means Clustering")
-with col2:
+with col3:
     st.subheader("Agglomerative Clustering")
 
 # Create dual map
 dual_map = create_dual_map(polygons_gdf)
-folium_static(dual_map, width=1400, height=1000)
+folium_static(dual_map, width=1300, height=1000)
